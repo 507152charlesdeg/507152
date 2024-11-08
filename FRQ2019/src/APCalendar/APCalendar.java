@@ -5,9 +5,7 @@ import java.util.*;
 public class APCalendar {
 
 	// constructor
-	public APCalendar() {
-
-	}
+	public APCalendar() {}
 
 	// YES if it's divisible by 4; NO if divisible by 4 && 100; YES if divisible by
 	// 400;
@@ -21,7 +19,7 @@ public class APCalendar {
 
 	public int numberOfLeapYears(int year, int year2) {
 		int numOfLeaps = 0;
-		int numYears = year2 - year;
+		int numYears = Math.abs(year2 - year);
 		int[] years = new int[numYears];
 		for (int i = 0; i < years.length; i++) {
 			years[i] = year + i;
@@ -37,7 +35,7 @@ public class APCalendar {
 	}
 
 	public int firstDayOfYear(int year) {
-		int numShifts = (year - 1933);
+		int numShifts = Math.abs(year - 1933);
 		int offset = numberOfLeapYears(year, year + numShifts);
 		numShifts = numShifts + offset;
 		int loops = 0;
@@ -46,138 +44,20 @@ public class APCalendar {
 		} else if (numShifts < 0) {
 			loops = (Math.abs((numShifts % 7)));
 		}
+		System.out.println(numShifts);
 		return loops;
 	}
 
 	public int dayOfYear(int day, int month, int year) {
-		if (month == 2) {
-			day += 31;
-		}
-		if (month == 3) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			
-		}
-		if (month == 4) {
-			// 30
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-		}
-		if (month == 5){
-			day += 31;
-			// 31
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-		}
-		if (month == 6) {
-			day += 31;
-			// 30
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-		}
-		if (month == 7) {
-			day += 31;
-			// 31
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-		}
-		if (month == 8) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 31;
-		}
-		if (month == 9) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 31;
-			day += 30;
-		}
-		if (month == 10) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 31;
-			day += 30;
-		}
-		if (month == 11) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 31;
-			day += 30;
-			day += 31;
-		}
-		if (month == 12) {
-			day += 31;
-			if (isLeapYear(year)) {
-				day += 29;
-			} else
-				day += 28;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 30;
-			day += 31;
-			day += 31;
-			day += 30;
-			day += 30;
-			day += 31;
+		
+		// inspired by Caitlyn Le
+		int[] progression = {31, 28, 31, 30, 31, 30, 31, 31, 30, 30, 31};
+		
+		if (isLeapYear(year) == true) {
+				progression[1] += 1;
+			}
+		for (int i = 0; i < month - 1; i++) {
+			day += progression[i];
 		}
 		return day;
 
