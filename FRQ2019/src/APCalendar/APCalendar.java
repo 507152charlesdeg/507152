@@ -5,7 +5,9 @@ import java.util.*;
 public class APCalendar {
 
 	// constructor
-	public APCalendar() {}
+	public APCalendar(){
+		//creates a new AP Calendar
+	}
 
 	// YES if it's divisible by 4; NO if divisible by 4 && 100; YES if divisible by
 	// 400;
@@ -35,15 +37,10 @@ public class APCalendar {
 	}
 
 	public int firstDayOfYear(int year) {
-		int numShifts = Math.abs(year - 1933);
-		int offset = numberOfLeapYears(year, year + numShifts);
+		int numShifts = Math.abs(year - 1984);
+		int offset = numberOfLeapYears(1984, year-1);
 		numShifts = numShifts + offset;
-		int loops = 0;
-		if (numShifts >= 0) {
-			loops = Math.abs((numShifts % 7));
-		} else if (numShifts < 0) {
-			loops = (Math.abs((numShifts % 7)));
-		}
+		int loops = (numShifts % 7);
 		System.out.println(numShifts);
 		return loops;
 	}
