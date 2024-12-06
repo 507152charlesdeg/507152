@@ -11,8 +11,11 @@ public class Tester {
 		cali.requestRoom("victoria");
 		cali.requestRoom("nick, the holy ArrayList<String>");
 		cali.requestRoom("roman");
-
+		
+		System.out.println(cali.getReservations());
+		System.out.println(cali.getWaitlist());
 		cali.cancelAndReassign(cali.getReservations()[0]);
+		System.out.println(cali.getReservations());
 		
 		/*
 		 * should print:

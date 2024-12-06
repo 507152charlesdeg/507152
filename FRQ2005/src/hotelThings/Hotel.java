@@ -28,6 +28,9 @@ public class Hotel {
 	public Reservation[] getReservations() {
 		return rooms;
 	}
+	public ArrayList<String> getWaitlist(){
+		return waitlist;
+	}
 
 	public Reservation cancelAndReassign(Reservation res) {
 		int room = res.getRoomNumber();

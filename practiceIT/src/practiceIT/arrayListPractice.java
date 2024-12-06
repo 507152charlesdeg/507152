@@ -7,9 +7,9 @@ public class arrayListPractice {
 
 	public static void main(String[] args) {
 		/*
-		 * test #1:["This", "is", "a", "test"] console output: test #2:["even", "odd",
-		 * "ev", "o"] console output: test #3:["Did", "you", "solve", "it", "or",
-		 * "what?"] console output:
+		 * test #1:["This", "is", "a", "test"] console output: 
+		 * test #2:["even", "odd","ev", "o"] console output: 
+		 * test #3:["Did", "you", "solve", "it", "or","what?"] console output:
 		 */
 
 		ArrayList<String> listy1 = new ArrayList<String>();
@@ -64,6 +64,12 @@ public class arrayListPractice {
 			String temp = strings.get(i);// temp holds strings[i]
 			strings.set(i, strings.get(i + 1));// strings[i] is changed to the value at [i+1]
 			strings.set(i + 1, temp);// strings[i+1] holds temp (the original strings[i])
+		}
+	}
+	
+	public void doubleList(ArrayList<String> list) {
+		for (int i = 0; i < list.size(); i += 2) {
+			list.add(i + 1, list.get(i));
 		}
 	}
 
