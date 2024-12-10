@@ -26,20 +26,11 @@ public class Phrase {
 
 		if (NthOccurrence != -1) {
 			String firstAndRepl = currentPhrase.substring(0, NthOccurrence) + repl;
-
-			System.out.print(currentPhrase.substring(0, NthOccurrence));
-			System.out.print(repl);
-
 			String last = currentPhrase.substring(NthOccurrence + str.length());
-			System.out.print(last);
-			System.out.println();
-
 			if (currentPhrase.substring(NthOccurrence).equals(last)) {
 				currentPhrase = firstAndRepl;
 			}
-
-			else
-				currentPhrase = firstAndRepl + last;
+			else currentPhrase = firstAndRepl + last;
 		}
 	}
 
