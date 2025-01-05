@@ -28,8 +28,15 @@ public class Hotel {
 	public Reservation[] getReservations() {
 		return rooms;
 	}
-	public ArrayList<String> getWaitlist(){
+
+	public ArrayList<String> getWaitlist() {
 		return waitlist;
+	}
+
+	public void printReservations() {
+		for (Reservation i : rooms) {
+			System.out.println("room: " + i.getRoomNumber() + ", name: " + i.getGuestName() + "; ");
+		}
 	}
 
 	public Reservation cancelAndReassign(Reservation res) {
