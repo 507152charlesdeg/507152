@@ -16,9 +16,13 @@ package firstProject;
  * @author Cay Horstmann
  */
 
-import boxBug.DancingBug;
+import java.awt.Color;
+
+//import boxBug.DancingBug;
 import boxBug.FaceBug;
+
 import info.gridworld.actor.*;
+import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
 import info.gridworld.grid.UnboundedGrid;
 
@@ -36,8 +40,10 @@ public class BugRunner
     {
         ActorWorld world = new ActorWorld(new UnboundedGrid<Actor>());
         //world.add(new Location(0,0), new QuickFaceBug("klus.jpg"));
-        world.add(new Location(0,0), new FaceBug("klus.jpg"));
-        world.add(new Location(0,-100), new DancingBug(1000));
+        //world.add(new Location(0,0), new FaceBug("klus.jpg"));
+        powerCritter thingy = new powerCritter(20);
+        world.add(new Location(5,5), new powerCritter(20));
+        world.add(new Location(4,4), thingy);
         world.show();
     }
 }

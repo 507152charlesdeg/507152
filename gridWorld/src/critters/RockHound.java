@@ -1,3 +1,5 @@
+package critters;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import info.gridworld.actor.Actor;

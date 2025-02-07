@@ -25,6 +25,12 @@ public class Hotel {
 
 	}
 
+	public void printReservations() {
+		for (Reservation i : rooms) {
+			System.out.println("name: " + i.getGuestName() + ", room number: " + i.getRoomNumber() + "; ");
+		}
+	}
+
 	public Reservation[] getReservations() {
 		return rooms;
 	}

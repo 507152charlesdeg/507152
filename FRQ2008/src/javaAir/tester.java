@@ -25,10 +25,10 @@ public class tester {
 		thing.add(part2);
 		thing.add(part3);
 		thing.add(part4);
-		
+
 		Trip vacation = new Trip(thing);
-		
-		System.out.println(vacation.getDuration()); //  should be 690
+
+		System.out.println(vacation.getDuration()); // should be 690
 		System.out.println(vacation.getShortestLayover()); // should be 15
 	}
 

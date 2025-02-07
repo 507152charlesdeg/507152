@@ -10,17 +10,19 @@ public class Time {
 		hour = h;
 		minute = m;
 
-		// 1:00 should be written as 1300
+		// 1:00 should be written as 13:00 (1 + 12)
 	}
 
+	
+	
 	/*
-	 * * @return difference in minutes, between this time and other; difference is
+	 * @return difference in minutes, between this time and other; difference is
 	 * negative if other is earlier than this time
 	 */
 	public int minutesUntil(Time other) {
 		int thisMins = hour * 60; // 780
 		int otherMins = other.hour * 60;// 840
-		int otherTotal = otherMins + other.minute;/* 855 */
+		int otherTotal = otherMins + other.minute; /* 855 */
 		int thisTotal = thisMins + minute; /* 780 */
 		return (otherTotal - thisTotal);
 	}

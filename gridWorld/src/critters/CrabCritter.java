@@ -1,3 +1,5 @@
+package critters;
+
 /* 
  * AP(r) Computer Science GridWorld Case Study:
  * Copyright(c) 2005-2006 Cay S. Horstmann (http://horstmann.com)
@@ -111,5 +113,7 @@ public class CrabCritter extends Critter
                 locs.add(neighborLoc);
         }
         return locs;
-    }    
+    }
+    
+    
 }

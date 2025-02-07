@@ -1,3 +1,5 @@
+package critters;
+
 import info.gridworld.actor.Actor;
 import info.gridworld.grid.Location;
 import java.awt.Color;
